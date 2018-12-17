@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head>
+  <title>SFFileSystem Browser</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+  <script src="./../dist/sffilesystem.min.js"></script>
+</head><body>
+
+See the result on browser console (<b>Inspect Element -> Console</b>)
+<br>
+Use CTRL + F5 to refresh if you're editing this source
+<br>
+<br>
+
+<pre><code class="language-js">
+// This script will be executed on global scope
+var myFile = new SFFileSystem({
+	home:'myRootFolder',
+	initError:function(){
+		console.error("Can't initialize filesystem");
+	},
+	callback:function(){
+		console.log("Initialized");
+	}
+});
+
+// Example: Create and read file in a folder
+myFile.home.newFolder('myFolder', function(myFolder){
+	// Callback after the folder was created
+
+	myFolder.newFile('myText', function(myText){
+		// Callback after the file was created
+
+		myText.write('hello world!', function(){
+			// Callback after the write was finished
+
+			myText.read(console.log);
+		});
+	});
+});
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript">
+	var myFile = new SFFileSystem({
+		home:'myRootFolder',
+		initError:function(e){
+			console.error("Can't initialize filesystem: ", e);
+		},
+		callback:function(){
+			console.log("Initialized");
+		}
+	});
+</script></body></html>
