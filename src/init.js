@@ -225,10 +225,6 @@ function SFFileSystem(options){
 			}, error);
 		}
 
-		var dir_dive = function(path, create, callback, error){
-			scope.path(path, callback, error, create, this);
-		}
-
 		// removeRecursively, remove
 		function wrapDirectoryType(dirEntry){
 			dirEntry.optDirectory = dirEntry.getDirectory;
@@ -242,7 +238,6 @@ function SFFileSystem(options){
 			dirEntry.exist = dir_exist;
 			dirEntry.contents = dir_contents;
 			dirEntry.list = dir_list;
-			dirEntry.dive = dir_dive;
 
 			dirEntry.optCopy = dirEntry.copyTo;
 			dirEntry.optMove = dirEntry.moveTo;

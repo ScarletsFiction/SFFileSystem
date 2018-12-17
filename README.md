@@ -64,20 +64,72 @@ Get contents from a path and return their Entry
 ```js
 myFile.contents('/myFolder', function(list){
     list instanceof Array;
-    // The array values can either be FileEntry or DirectoryEntry
+    // [FileEntry, DirectoryEntry, ...]
 });
 ```
 
 
 ### Directory Entry
 #### newFolder
+Create new folder and get it's Entry
+```js
+dirEntry.newFolder('myFolder', function(subFolder){
+    subFolder.isDirectory === true;
+});
+```
+
 #### newFile
+Create new file and get it's Entry
+```js
+dirEntry.newFile('myFile', function(fileEntry){
+    // fileEntry.write('stuff');
+});
+```
+
 #### getFolder
+Go to deeper folder and return the Directory Entry
+```js
+dirEntry.getFolder('myFolder', function(subFolder){
+    subFolder.isDirectory === true;
+});
+```
+
 #### getFile
+Get the file entry inside current folder
+```js
+dirEntry.getFile('myFile', function(fileEntry){
+    fileEntry.isFile === true;
+});
+```
+
 #### exist
+Check if file/folder was exist and return the type of the target
+```js
+dirEntry.exist('myFolder', function(list){
+    if(exist === 'file' || exist === 'folder')
+        console.log(true);
+    else
+        console.log(false);
+});
+```
+
 #### contents
+Get contents from current folder and return their Entry
+```js
+dirEntry.contents(function(list){
+    list instanceof Array;
+    // [FileEntry, DirectoryEntry, ...]
+});
+```
+
 #### list
-#### dive
+Get contents from current folder and return their Entry
+```js
+dirEntry.list(function(list){
+    list instanceof Array;
+    // ['myFile.txt', 'myFolder']
+});
+```
 
 ### File Entry
 #### write
