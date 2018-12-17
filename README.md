@@ -2,10 +2,10 @@
 
 [![Written by](https://img.shields.io/badge/Written%20by-ScarletsFiction-%231e87ff.svg)](LICENSE)
 [![Software License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=SFMediaStream%20is%20alibrary%20for%20playing%20media%20or%20stream%20microphone.&url=https://github.com/ScarletsFiction/SFMediaStream&via=github&hashtags=SFMediaStream,video,audio,playlist,stream,microphone)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=SFFileSystem%20is%20a%20library%20for%20accessing%20local%20file%20system%20for%20the%20current%20website%20on%20the%20browser.&url=https://github.com/ScarletsFiction/SFFileSystem&via=github&hashtags=SFFileSystem,file,html5,storage,cordova)
 
 # SFFileSystem
-Extends functionality of modern browser FileSystem's API
+A library for accessing local file system for the current website on the browser
 
 ## How to use
 ### Initialization
